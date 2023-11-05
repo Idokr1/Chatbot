@@ -9,6 +9,9 @@ Each request represents real-time data that has been retrieved using Scraping.
 
 ## Live
 [DialogFlow Chat](https://console.dialogflow.com/api-client/demo/embedded/c1cf1dc4-ba87-4c32-b191-b82259417327)
+[Chatbot API](https://idok-chatbot.runmydocker-app.com/swagger-ui.html)
+[ChatBOT API Replit](https://chatbot.idokrupik.repl.co/swagger-ui.html)
+
 
 
 ## Tools:
