@@ -1,5 +1,5 @@
 # Chatbot Web Scraper
-This application serves as a web scraping tool designed to extract product data from websites that align with a user's specified keyword search.
+This application serves as a web scraping tool designed to extract product data and the weather from websites that align with a user's specified keyword search.
 
 Enables communication between a bot and a user using Dialogflow and Webhooks.
 
