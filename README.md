@@ -7,12 +7,16 @@ During the communication, Dialogflow detects the user's intentions and according
 
 Each request represents real-time data that has been retrieved using Scraping.
 
-## Live
+## Example:
+Amazon Products: Ask for "Products", then provide the name of a product, and the chatbot will provide you a list of items from Amazon's first page.
+Yahoo- Weather: Ask "What is the weather/Weather", then provide the name of a city or state, and the chatbot will provide you with the current weather.
+
+## Live:
+[Chatbot API](https://idok-chatbot.runmydocker-app.com/swagger-ui.html) <br />
+[ChatBOT API Replit](https://chatbot.idokrupik.repl.co/swagger-ui.html) <br />
 [DialogFlow Chat](https://console.dialogflow.com/api-client/demo/embedded/c1cf1dc4-ba87-4c32-b191-b82259417327)
-[Chatbot API](https://idok-chatbot.runmydocker-app.com/swagger-ui.html)
-[ChatBOT API Replit](https://chatbot.idokrupik.repl.co/swagger-ui.html)
 
-
+* Before running the DialogFlow Chat, Open the [Chatbot API](https://idok-chatbot.runmydocker-app.com/swagger-ui.html) and make sure the server is up and running
 
 ## Tools:
 * Spring Boot
@@ -23,5 +27,3 @@ Each request represents real-time data that has been retrieved using Scraping.
 * Scraping
 * Regex
 * RestApi
-
-
