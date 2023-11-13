@@ -20,7 +20,7 @@ public class HotelsService {
         String res = "";
         Matcher matcher = HOTEL_PATTERN.matcher(html);
         while (matcher.find()) {
-            res += matcher.group(1) + ", Rating - " + matcher.group(2) + ", Reviews:" + matcher.group(3) + "\n";
+            res += matcher.group(1) + ", Rating - " + matcher.group(2) + ", Reviews: " + matcher.group(3) + "\n";
         }
         return res;
     }
