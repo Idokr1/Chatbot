@@ -18,7 +18,7 @@ public class AmazonService {
         String res = "";
         Matcher matcher = PRODUCT_PATTERN.matcher(html);
         while (matcher.find()) {
-            res += matcher.group(1) + " - " + matcher.group(2) + ", price:" + matcher.group(3) + "<br>\n";
+            res += matcher.group(1) + " - " + matcher.group(2) + ", Price: " + matcher.group(3) + "\n";
         }
         return res;
     }
