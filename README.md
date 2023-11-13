@@ -8,9 +8,9 @@ During the communication, Dialogflow detects the user's intentions and according
 Each request represents real-time data that has been retrieved using Scraping.
 
 ## Example:
-Amazon Products: Ask for "Products", then provide the name of a product, and the chatbot will provide you a list of items from Amazon's first page.
-Yahoo- Weather: Ask "What is the weather/Weather", then provide the name of a city or state, and the chatbot will provide you with the current weather.
-Tripadvisor Hotels: Ask "Give me a list of hotels", then provide the name of a location, and the chatbot will provide you a list of hotels from Tripadvisor's first page.
+* Amazon Products: Ask for "Products", then provide the name of a product, and the chatbot will provide you a list of items from Amazon's first page.
+* Yahoo- Weather: Ask "What is the weather/Weather", then provide the name of a city or state, and the chatbot will provide you with the current weather.
+* Tripadvisor Hotels: Ask "Give me a list of hotels", then provide the name of a location, and the chatbot will provide you a list of hotels from Tripadvisor's first page.
 
 ## Live:
 [Chatbot API](https://idok-chatbot.runmydocker-app.com/swagger-ui.html) <br />
