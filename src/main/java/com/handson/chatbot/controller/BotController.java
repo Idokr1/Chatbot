@@ -1,6 +1,7 @@
 package com.handson.chatbot.controller;
 
 import com.handson.chatbot.service.AmazonService;
+import com.handson.chatbot.service.HotelsService;
 import com.handson.chatbot.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,9 @@ public class BotController {
     @Autowired
     WeatherService weatherService;
 
+    @Autowired
+    HotelsService hotelsService;
+
     @RequestMapping(value = "/amazon", method = RequestMethod.GET)
     public ResponseEntity<?> getProduct(@RequestParam String keyword) throws IOException {
         return new ResponseEntity<>(amazonService.searchProducts(keyword), HttpStatus.OK);
@@ -30,6 +34,11 @@ public class BotController {
         return new ResponseEntity<>(weatherService.searchWeather(keyword), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/hotels", method = RequestMethod.GET)
+    public ResponseEntity<?> getHotels(@RequestParam String keyword) throws IOException {
+        return new ResponseEntity<>(hotelsService.searchHotels(keyword), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "", method = { RequestMethod.POST})
     public ResponseEntity<?> getBotResponse(@RequestBody BotQuery query) throws IOException {
         HashMap<String, String> params = query.getQueryResult().getParameters();
@@ -38,6 +47,8 @@ public class BotController {
             res = weatherService.searchWeather(params.get("city"));
         } else if (params.containsKey("product")) {
             res = amazonService.searchProducts(params.get("product"));
+        } else if (params.containsKey("location")) {
+            res = hotelsService.searchHotels(params.get("location"));
         }
         return new ResponseEntity<>(BotResponse.of(res), HttpStatus.OK);
     }
