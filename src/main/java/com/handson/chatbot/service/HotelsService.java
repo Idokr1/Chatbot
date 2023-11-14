@@ -9,8 +9,8 @@ import java.util.regex.Matcher;
 
 @Service
 public class HotelsService {
-
-    public static final Pattern HOTEL_PATTERN = Pattern.compile("\\);\\\"><span>([^<]+)<\\/span>[^>]+>[^>]+>[^>]+><span class=\\\"[^\\\"]+\\\"alt='([a-zA-Z0-9 ]+)[^>]+[^;]+[^>]+>([^<]+)<\\/a>");
+   
+    public static final Pattern HOTEL_PATTERN = Pattern.compile("\\);\\\"><span>([^<]+)<\\/span>[^>]+>[^/]+/([^#]+)[^>]+>[^>]+><span class=\\\"[^\\\"]+\\\"alt='([a-zA-Z0-9 ]+)[^>]+[^;]+[^>]+>([^<]+)<\\/a>");
 
     public String searchHotels(String keyword) throws IOException {
         return parseHotelHtml(getHotelHtml(keyword));
@@ -19,8 +19,12 @@ public class HotelsService {
     private String parseHotelHtml(String html) {
         String res = "";
         Matcher matcher = HOTEL_PATTERN.matcher(html);
+        int i = 0;
         while (matcher.find()) {
-            res += matcher.group(1) + ", Rating - " + matcher.group(2) + ", Reviews: " + matcher.group(3) + "\n";
+            res += matcher.group(1) + ", Rating - " + matcher.group(3) + ", Reviews: " + matcher.group(4) + ", Link: https://www.tripadvisor.com/" + matcher.group(2) + "\n";
+            i++;
+            if (i == 5)
+                break;
         }
         return res;
     }
