@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 
 @Service
 public class AmazonService {
-    public static final Pattern PRODUCT_PATTERN = Pattern.compile("<span class=\\\"a-size-medium a-color-base a-text-normal\\\">([^<]+)<\\/span>.*<span class=\\\"a-icon-alt\\\">([^<]+)<\\/span>.*<span class=\\\"a-offscreen\\\">([^<]+)<\\/span>");
+  public static final Pattern PRODUCT_PATTERN = Pattern.compile("<span class=\\\"a-size-medium a-color-base a-text-normal\\\">([^<]+)<\\/span>.*<span class=\\\"a-icon-alt\\\">([^<]+)<\\/span>.*href=\\\"([^?]+)\\?.*<span class=\\\"a-price\\\" data-a-size=\\\"xl\\\" data-a-color=\\\"base\\\"><span class=\\\"a-offscreen\\\">([^<]+)<\\/span>");
 
     public String searchProducts(String keyword) throws IOException {
         return parseProductHtml(getProductHtml(keyword));
@@ -17,8 +17,12 @@ public class AmazonService {
     private String parseProductHtml(String html) {
         String res = "";
         Matcher matcher = PRODUCT_PATTERN.matcher(html);
+        int i = 0;
         while (matcher.find()) {
-            res += matcher.group(1) + " - " + matcher.group(2) + ", Price: " + matcher.group(3) + "\n";
+            res += matcher.group(1) + " - " + matcher.group(2) + ", Price: " + matcher.group(4) + ", Link: https://www.amazon.com" + matcher.group(3) +"\n";
+            i++;
+            if (i == 5)
+                break;
         }
         return res;
     }
