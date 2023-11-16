@@ -22,6 +22,7 @@ Each request represents real-time data that has been retrieved using Scraping.
 ## Tools:
 * Spring Boot
 * Dialogflow
+* Slack
 * Docker
 * Maven
 * Webhook
