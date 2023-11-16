@@ -28,4 +28,4 @@ Each request represents real-time data that has been retrieved using Scraping.
 * Webhook
 * Scraping
 * Regex
-* RestApi
+* RestAPI
