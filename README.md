@@ -29,3 +29,6 @@ Each request represents real-time data that has been retrieved using Scraping.
 * Scraping
 * Regex
 * RestAPI
+
+![Diagram](/chatbot-diagram.png)
+
