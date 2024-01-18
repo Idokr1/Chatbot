@@ -10,8 +10,9 @@ import java.util.regex.Matcher;
 @Service
 public class HotelsService {
    
-    public static final Pattern HOTEL_PATTERN = Pattern.compile("\\);\\\"><span>([^<]+)<\\/span>[^>]+>[^/]+/([^#]+)[^>]+>[^>]+><span class=\\\"[^\\\"]+\\\"alt='([a-zA-Z0-9 ]+)[^>]+[^;]+[^>]+>([^<]+)<\\/a>");
+    public static final Pattern HOTEL_PATTERN = Pattern.compile("\"\\);\\\"><span>([^<]+)<\\/span>[^>]+>[^/]+/([^#]+)[^>]+>[^>]+><span class=\\\"[^\\\"]+\\\" alt=\\\"([a-zA-Z0-9 ]+)[^>]+[^;]+[^>]+>([^<]+)<\\/a>\"gm");
 
+   
     public String searchHotels(String keyword) throws IOException {
         return parseHotelHtml(getHotelHtml(keyword));
     }
